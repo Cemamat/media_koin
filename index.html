@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulasi Peluang Pelemparan Koin</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-container">
+    <div class="sidebar">
+        <div class="sidebar-controls">
+            <h3 class="menu-title">Menu Simulasi</h3>
+            
+            <label for="rollInput" style="font-size: 14px; color:#333;">Jumlah Lemparan:</label>
+            <input type="number" id="rollInput" value="1" min="1">
+            <button class="btn-roll" onclick="rollCoin()">Toss Coin!</button>
+            <button class="btn-reset" onclick="resetSim()">Reset Data</button>
+        </div>
+        
+        <div class="sidebar-history" id="coinHistory"></div>
+    </div>
+
+    <div class="main-content">
+        <h2>Simulasi Peluang Koin Ideal (Fair Coin)</h2>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sisi Koin</th>
+                        <th>Jumlah Muncul</th>
+                        <th>Total Lemparan</th>
+                        <th>Peluang Empiris</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Angka</td>
+                        <td id="headsCount">0</td>
+                        <td id="totalCountTable" rowspan="2">0</td>
+                        <td id="headsProp">0.0000</td>
+                    </tr>
+                    <tr>
+                        <td>Gambar</td>
+                        <td id="tailsCount">0</td>
+                        <td id="tailsProp">0.0000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active" id="btnBar" onclick="switchTab('bar')">Bar Chart (Outcomes)</button>
+            <button class="tab-btn" id="btnLine" onclick="switchTab('line')">Line Chart (Convergence)</button>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
