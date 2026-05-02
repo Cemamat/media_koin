@@ -10,19 +10,29 @@
 <body>
 
 <div class="app-container">
+    <!-- Sidebar -->
     <div class="sidebar">
         <div class="sidebar-controls">
             <h3 class="menu-title">Menu Simulasi</h3>
             
-            <label for="rollInput" style="font-size: 14px; color:#333;">Jumlah Lemparan:</label>
-            <input type="number" id="rollInput" value="1" min="1">
-            <button class="btn-roll" onclick="rollCoin()">Toss Coin!</button>
-            <button class="btn-reset" onclick="resetSim()">Reset Data</button>
+            <!-- KUNCI PERBAIKAN: Label dan Input dibungkus agar sejajar -->
+            <div class="input-group">
+                <label for="rollInput" style="font-size: 14px; color:#333; white-space: nowrap;">Jumlah Lemparan:</label>
+                <input type="number" id="rollInput" value="1" min="1">
+            </div>
+            
+            <!-- Pembungkus Tombol agar Bersebelahan -->
+            <div class="button-group">
+                <button class="btn-roll" onclick="rollCoin()">Toss Coin!</button>
+                <button class="btn-reset" onclick="resetSim()">Reset Data</button>
+            </div>
         </div>
         
+        <!-- Histori Koin -->
         <div class="sidebar-history" id="coinHistory"></div>
     </div>
 
+    <!-- Area Konten Utama -->
     <div class="main-content">
         <h2>Simulasi Peluang Koin Ideal (Fair Coin)</h2>
         
